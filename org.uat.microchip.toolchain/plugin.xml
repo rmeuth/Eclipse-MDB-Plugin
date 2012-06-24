@@ -316,5 +316,21 @@
          </pattern>
       </errorparser>
    </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.uat.microchip.debug.ui.launcher.MicrochipTabGroup"
+            id="MicrochipToolPropertiesTabGroup"
+            type="MicrochipLaunchDelegate">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.uat.microchip.debug.launcher.MicrochipLaunchDelegate"
+            id="MicrochipLaunchDelegate"
+            name="Debug a program on a Microchip Device">
+      </launchConfigurationType>
+   </extension>
 
 </plugin>
