@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="C:/Users/Jacob/Desktop/mplab-x-sdk/MPLAB_X/lib/mdb.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-comm.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-jfreechart.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-jna.jar"/>
