@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.uat.microchip.buildDefinitions"
+         name="Microchip Tool Chain"
+         point="org.eclipse.cdt.managedbuilder.core.buildDefinitions">
+      <projectType
+            id="org.uat.microchip.toolchain.picMicrocontroller"
+            name="PIC Microcontroller">
+         <configuration
+               cleanCommand="del /f"
+               errorParsers="org.uat.microchip.compiler.errorparser"
+               id="org.uat.microchip.toolchain.picMicrocontroller.release."
+               name="Release">
+            <toolChain
+                  id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain"
+                  isAbstract="false"
+                  name="Microchip Toolchain C18"
+                  targetTool="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker">
+               <tool
+                     command="mcc18"
+                     commandLinePattern="${command} ${inputs} ${flags} -fo=${output}"
+                     errorParsers="org.uat.microchip.errorparser"
+                     id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler"
+                     isAbstract="false"
+                     name="Compiler"
+                     natureFilter="both">
+                  <optionCategory
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.directories"
+                        name="Directories">
+                  </optionCategory>
+                  <option
+                        browseType="directory"
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.directories"
+                        command="-I"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.incpath"
+                        name="Include Paths (-I)"
+                        valueType="includePath">
+                  </option>
+                  <optionCategory
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.Optimization"
+                        name="Optimization">
+                  </optionCategory>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.Optimization"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.optionOptimization"
+                        isAbstract="false"
+                        name="Optimization"
+                        resourceFilter="project"
+                        valueType="enumerated">
+                     <enumeratedOptionValue
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.optimization.default"
+                           isDefault="true"
+                           name="Default">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="-O+"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.optimization.enableOptimization"
+                           isDefault="false"
+                           name="Enable all optimizations">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="-O-"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.optimization.disableOptimization"
+                           isDefault="false"
+                           name="Disable all optimizations">
+                     </enumeratedOptionValue>
+                  </option>
+                  <optionCategory
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.miscellaneous"
+                        name="Miscellaneous">
+                  </optionCategory>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.miscellaneous"
+                        command="-verbose"
+                        defaultValue="false"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.verbose"
+                        isAbstract="false"
+                        name="Verbose"
+                        valueType="boolean">
+                  </option>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.miscellaneous"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.extendedModeCode"
+                        isAbstract="false"
+                        name="Generate Extended Mode Code"
+                        valueType="enumerated">
+                     <enumeratedOptionValue
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.extendedModeCode.null"
+                           isDefault="true"
+                           name="Defaults">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="--extended"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.extendedModeCode.extended"
+                           name="Extended">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="--no-extended"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.extendedModeCode.nonExtended"
+                           name="Non-Extended">
+                     </enumeratedOptionValue>
+                  </option>
+                  <inputType
+                        dependencyContentType="org.eclipse.cdt.core.cHeader"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.cCode"
+                        multipleOfType="true"
+                        name="C Sources"
+                        sourceContentType="org.eclipse.cdt.core.cSource">
+                  </inputType>
+                  <outputType
+                        buildVariable="O_FILE"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.outputObjectFile"
+                        multipleOfType="false"
+                        name="Object Files"
+                        outputs="o">
+                  </outputType>
+               </tool>
+               <tool
+                     command="mplink"
+                     commandLinePattern="${command} ${flags} /o ${output} "
+                     errorParsers="org.uat.microchip.linker.errorparser"
+                     id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker"
+                     isAbstract="false"
+                     name="Linker">
+                  <optionCategory
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
+                        name="General">
+                  </optionCategory>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.optionMicrocontroller"
+                        isAbstract="false"
+                        name="Microcontroller"
+                        resourceFilter="project"
+                        valueType="enumerated">
+                     <enumeratedOptionValue
+                           command="18C242_g.lkr ${inputs} p18C242.lib /p 18C242"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18c242"
+                           name="PIC18C242">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="&quot;18C252_g.lkr&quot; ${inputs} &quot;p18C252.lib&quot; /p 18C242"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18C252"
+                           name="PIC18C252">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="&quot;18C442_g.lkr&quot; ${inputs} &quot;p18C442.lib&quot; /p 18C442"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18C442"
+                           name="PIC18C442">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="&quot;18C452_g.lkr&quot; ${inputs} &quot;p18C452.lib&quot; /p 18C452"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18C452"
+                           name="PIC18C452">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="&quot;18F4550_g.lkr&quot; ${inputs} &quot;p18F4550.lib&quot; /p 18F4550"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18F4550"
+                           name="PIC18F4550">
+                     </enumeratedOptionValue>
+                  </option>
+                  <option
+                        browseType="file"
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
+                        defaultValue="/m &quot;${BuildArtifactFileBaseName}.map&quot;"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.mapfile"
+                        name="Map Filename"
+                        valueType="string">
+                  </option>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat"
+                        name="Hex Format"
+                        valueType="enumerated">
+                     <enumeratedOptionValue
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.default"
+                           isDefault="true"
+                           name="Default">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="/a INHX8M"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.inhx8m"
+                           name="INHX8M">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="/a INHX8S"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.inhx8s"
+                           name="INHX8S">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="/a INHX32"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.inhx32"
+                           name="INHX32">
+                     </enumeratedOptionValue>
+                  </option>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
+                        command="/v"
+                        defaultValue="false"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.verbose"
+                        name="Verbose"
+                        valueType="boolean">
+                  </option>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.other"
+                        name="Other Arguments"
+                        valueType="string">
+                  </option>
+                  <optionCategory
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.directories"
+                        name="Directories">
+                  </optionCategory>
+                  <option
+                        browseType="directory"
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.directories"
+                        command="/l"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.libraries"
+                        name="Libraries Path (/l)"
+                        valueType="stringList">
+                  </option>
+                  <option
+                        browseType="directory"
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.directories"
+                        command="/k"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.linkerCmd"
+                        name="Linker Command Path (/k)"
+                        valueType="stringList">
+                  </option>
+                  <inputType
+                        buildVariable="O_FILE"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.oFile"
+                        multipleOfType="false"
+                        name="O File"
+                        primaryInput="true">
+                  </inputType>
+                  <outputType
+                        buildVariable="HEX_FILE"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.outputHexFile"
+                        multipleOfType="false"
+                        name="Hex Files"
+                        outputNames="${BuildArtifactFileBaseName}.hex"
+                        outputs="hex"
+                        primaryInputType="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.oFile">
+                  </outputType>
+               </tool>
+               <builder
+                     errorParsers="org.eclipse.cdt.core.MakeErrorParser"
+                     id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.builder"
+                     name="GNU Make"
+                     superClass="cdt.managedbuild.target.gnu.builder">
+               </builder>
+            </toolChain>
+         </configuration>
+      </projectType>
+   </extension>
+   <extension
+         id="id1"
+         name="name"
+         point="org.eclipse.cdt.core.ErrorParser">
+      <errorparser
+            id="org.uat.microchip.compiler.errorparser"
+            name="Microchip C18 Compiler Error Parser">
+         <pattern
+               description-expr="$3"
+               eat-processed-line="true"
+               file-expr="$1"
+               line-expr="$2"
+               regex="([a-zA-Z]:[^:$]*|[^:$]*):([0-9]+)[\\.:](Warning[^:$]*)([^$]*)"
+               severity="Warning">
+         </pattern>
+         <pattern
+               description-expr="$3"
+               eat-processed-line="true"
+               file-expr="$1"
+               line-expr="$2"
+               regex="([a-zA-Z]:[^:$]*|[^:$]*):([0-9]+)[\\.:](Error[^:$]*)([^$]*)"
+               severity="Error">
+         </pattern>
+      </errorparser>
+   </extension>
+   <extension
+         id="id1"
+         name="name"
+         point="org.eclipse.cdt.core.ErrorParser">
+      <errorparser
+            id="org.uat.microchip.linker.errorparser"
+            name="Microchip MPLink Error Parser">
+         <pattern
+               description-expr="$1"
+               eat-processed-line="true"
+               file-expr="$2"
+               regex="Error - (.*) in file \&apos;(.*)\&apos;.*"
+               severity="Error">
+         </pattern>
+         <pattern
+               description-expr="$1"
+               eat-processed-line="true"
+               regex="Error - (.*)"
+               severity="Error">
+         </pattern>
+         <pattern
+               description-expr="$1"
+               eat-processed-line="true"
+               file-expr="$2"
+               regex="Warning - (.*) in file \&apos;(.*)\&apos;.*"
+               severity="Warning">
+         </pattern>
+         <pattern
+               description-expr="$1"
+               eat-processed-line="true"
+               regex="Warning - (.*)"
+               severity="Warning">
+         </pattern>
+      </errorparser>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.uat.microchip.debug.ui.launcher.MicrochipTabGroup"
+            id="MicrochipToolPropertiesTabGroup"
+            type="MicrochipLaunchDelegate">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.uat.microchip.debug.launcher.MicrochipLaunchDelegate"
+            id="MicrochipLaunchDelegate"
+            name="Debug a program on a Microchip Device">
+      </launchConfigurationType>
+   </extension>
+
+</plugin>
