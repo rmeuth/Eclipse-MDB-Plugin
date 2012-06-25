@@ -333,5 +333,13 @@
             name="Debug a program on a Microchip Device">
       </launchConfigurationType>
    </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="MicrochipLaunchDelegate"
+            icon="icons/microchipLogo.png"
+            id="org.uat.microchip.toolchain.microchipLaunchLogo">
+      </launchConfigurationTypeImage>
+   </extension>
 
 </plugin>
