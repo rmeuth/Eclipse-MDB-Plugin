@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2012-06-25T12:14:45</date>
+  <millis>1340651685515</millis>
+  <sequence>0</sequence>
+  <logger>MPLAB</logger>
+  <level>INFO</level>
+  <class>com.microchip.mplab.mdbcore.assemblies.assembly.MCAssembly</class>
+  <method>lookup</method>
+  <thread>10</thread>
+  <message>Lookup failed to create com.microchip.mplab.mdbcore.memory.memorytypes.PeripheralMemory</message>
+  <exception>
+    <message>com.microchip.mplab.mdbcore.assemblies.PartyException: com.microchip.mplab.mdbcore.memory.MemoryException: PIC24FJ64GA004 does not have peripheral memory</message>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.memory.memories.MCMemoryModel</class>
+      <method>Engage</method>
+      <line>61</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.assemblies.assembly.MCAssembly</class>
+      <method>lookup</method>
+      <line>165</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.debugger.MCDebugger</class>
+      <method>DetachFromMemories</method>
+      <line>1041</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.debugger.MCDebugger</class>
+      <method>Disconnect</method>
+      <line>180</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.debugger.MCDebugger</class>
+      <method>Connect</method>
+      <line>137</line>
+    </frame>
+    <frame>
+      <class>mdbUAT.Main</class>
+      <method>main</method>
+      <line>63</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2012-06-25T12:14:45</date>
+  <millis>1340651685520</millis>
+  <sequence>1</sequence>
+  <logger>MPLAB</logger>
+  <level>INFO</level>
+  <class>com.microchip.mplab.mdbcore.assemblies.assembly.MCAssembly</class>
+  <method>lookup</method>
+  <thread>10</thread>
+  <message>Lookup failed to create com.microchip.mplab.mdbcore.memory.memorytypes.NMMR</message>
+  <exception>
+    <message>com.microchip.mplab.mdbcore.assemblies.PartyException: com.microchip.mplab.mdbcore.memory.MemoryException: PIC24FJ64GA004 does not have NMMRs</message>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.memory.memories.MCMemoryModel</class>
+      <method>Engage</method>
+      <line>61</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.assemblies.assembly.MCAssembly</class>
+      <method>lookup</method>
+      <line>165</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.debugger.MCDebugger</class>
+      <method>DetachFromMemories</method>
+      <line>1044</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.debugger.MCDebugger</class>
+      <method>Disconnect</method>
+      <line>180</line>
+    </frame>
+    <frame>
+      <class>com.microchip.mplab.mdbcore.debugger.MCDebugger</class>
+      <method>Connect</method>
+      <line>137</line>
+    </frame>
+    <frame>
+      <class>mdbUAT.Main</class>
+      <method>main</method>
+      <line>63</line>
+    </frame>
+  </exception>
+</record>
+</log>

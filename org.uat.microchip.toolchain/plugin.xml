@@ -320,7 +320,7 @@
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
             class="org.uat.microchip.debug.ui.launcher.MicrochipTabGroup"
-            id="MicrochipToolPropertiesTabGroup"
+            id="MicrochipTabGroup"
             type="MicrochipLaunchDelegate">
       </launchConfigurationTabGroup>
    </extension>
@@ -329,6 +329,7 @@
       <launchConfigurationType
             delegate="org.uat.microchip.debug.launcher.MicrochipLaunchDelegate"
             id="MicrochipLaunchDelegate"
+            modes="run,debug"
             name="Debug a program on a Microchip Device">
       </launchConfigurationType>
    </extension>
