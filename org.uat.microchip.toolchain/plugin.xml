@@ -27,13 +27,36 @@
                      name="Compiler"
                      natureFilter="both">
                   <optionCategory
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.general"
+                        name="General">
+                  </optionCategory>
+                  <option
+                        category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.general"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.optionMicrocontrollerCompiler"
+                        isAbstract="false"
+                        name="Microcontroller"
+                        resourceFilter="project"
+                        valueType="enumerated">
+                     <enumeratedOptionValue
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontrollercompiler.generic"
+                           isDefault="true"
+                           name="Generic">
+                     </enumeratedOptionValue>
+                     <enumeratedOptionValue
+                           command="-p18F4550"
+                           id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontrollercompiler.p18F4550"
+                           isDefault="false"
+                           name="PIC18F4550">
+                     </enumeratedOptionValue>
+                  </option>
+                  <optionCategory
                         id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.directories"
                         name="Directories">
                   </optionCategory>
                   <option
                         browseType="directory"
                         category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.category.directories"
-                        command="-I"
+                        command="-I "
                         id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.compiler.option.incpath"
                         name="Include Paths (-I)"
                         valueType="includePath">
@@ -136,27 +159,27 @@
                         resourceFilter="project"
                         valueType="enumerated">
                      <enumeratedOptionValue
-                           command="18C242_g.lkr ${inputs} p18C242.lib /p 18C242"
+                           command="18C242_g.lkr ${inputs} p18C242.lib -p18C242"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18c242"
                            name="PIC18C242">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="&quot;18C252_g.lkr&quot; ${inputs} &quot;p18C252.lib&quot; /p 18C242"
+                           command="&quot;18C252_g.lkr&quot; ${inputs} &quot;p18C252.lib&quot; -p18C242"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18C252"
                            name="PIC18C252">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="&quot;18C442_g.lkr&quot; ${inputs} &quot;p18C442.lib&quot; /p 18C442"
+                           command="&quot;18C442_g.lkr&quot; ${inputs} &quot;p18C442.lib&quot; -p18C442"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18C442"
                            name="PIC18C442">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="&quot;18C452_g.lkr&quot; ${inputs} &quot;p18C452.lib&quot; /p 18C452"
+                           command="&quot;18C452_g.lkr&quot; ${inputs} &quot;p18C452.lib&quot; -p18C452"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18C452"
                            name="PIC18C452">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="&quot;18F4550_g.lkr&quot; ${inputs} &quot;p18F4550.lib&quot; /p 18F4550"
+                           command="-w -z__MPLAB_BUILD=1  -u_CRUNTIME &quot;18F4550_g.lkr&quot; ${inputs} &quot;p18F4550.lib&quot; -p18F4550"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.microcontroller.p18F4550"
                            name="PIC18F4550">
                      </enumeratedOptionValue>
@@ -164,7 +187,7 @@
                   <option
                         browseType="file"
                         category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
-                        defaultValue="/m &quot;${BuildArtifactFileBaseName}.map&quot;"
+                        defaultValue="-m &quot;${BuildArtifactFileBaseName}.map&quot;"
                         id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.mapfile"
                         name="Map Filename"
                         valueType="string">
@@ -180,24 +203,24 @@
                            name="Default">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="/a INHX8M"
+                           command="-a INHX8M"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.inhx8m"
                            name="INHX8M">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="/a INHX8S"
+                           command="-a INHX8S"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.inhx8s"
                            name="INHX8S">
                      </enumeratedOptionValue>
                      <enumeratedOptionValue
-                           command="/a INHX32"
+                           command="-a INHX32"
                            id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.hexFormat.inhx32"
                            name="INHX32">
                      </enumeratedOptionValue>
                   </option>
                   <option
                         category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.general"
-                        command="/v"
+                        command="-v"
                         defaultValue="false"
                         id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.verbose"
                         name="Verbose"
@@ -216,7 +239,7 @@
                   <option
                         browseType="directory"
                         category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.directories"
-                        command="/l"
+                        command="-l"
                         id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.libraries"
                         name="Libraries Path (/l)"
                         valueType="stringList">
@@ -224,7 +247,7 @@
                   <option
                         browseType="directory"
                         category="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.category.directories"
-                        command="/k"
+                        command="-k"
                         id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.option.linkerCmd"
                         name="Linker Command Path (/k)"
                         valueType="stringList">
@@ -237,13 +260,36 @@
                         primaryInput="true">
                   </inputType>
                   <outputType
+                        buildVariable="COF_FILE"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.outputCofFile"
+                        multipleOfType="false"
+                        name="COF Files"
+                        outputNames="${BuildArtifactFileBaseName}.cof"
+                        outputs="cof"
+                        primaryInputType="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.oFile">
+                  </outputType>
+               </tool>
+               <tool
+                     command="mp2hex"
+                     commandLinePattern="${command} ${inputs}"
+                     id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.HexConverter"
+                     isAbstract="false"
+                     name="Hex Converter">
+                  <inputType
+                        buildVariable="COF_FILE"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.hexconverter.cof"
+                        multipleOfType="false"
+                        name="COF File"
+                        primaryInput="true">
+                  </inputType>
+                  <outputType
                         buildVariable="HEX_FILE"
-                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.outputHexFile"
+                        id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.hexconverter.hex"
                         multipleOfType="false"
                         name="Hex Files"
                         outputNames="${BuildArtifactFileBaseName}.hex"
                         outputs="hex"
-                        primaryInputType="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.linker.oFile">
+                        primaryInputType="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain.hexconverter.cof">
                   </outputType>
                </tool>
                <builder
