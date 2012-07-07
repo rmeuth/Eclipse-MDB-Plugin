@@ -7,6 +7,7 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.LaunchConfigurationDelegate;
 import org.eclipse.debug.core.model.RuntimeProcess;
+import org.uat.microchip.toolchain.Activator;
 
 /**
  * Launches the program
@@ -19,10 +20,18 @@ public class MicrochipLaunchDelegate extends LaunchConfigurationDelegate{
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 
-		Process process = DebugPlugin.exec(new String[]{"cmd", "/C", "\"echo I'm Working!\""}, null);
+		StringBuilder savedProperties = new StringBuilder();
 		
-		new RuntimeProcess(launch, process, "Hello", null);
+		for (org.uat.microchip.debug.model.ToolProperty property : Activator.getToolProperties()) {
+			
+			if(property.getCurrentValue() != null)
+				savedProperties.append("\n " + property.toString());
+		}
 		
+		
+		Process process = DebugPlugin.exec(new String[]{"cmd", "/C", "\"echo Imm Working!\""}, null);
+		
+		new RuntimeProcess(launch, process, "Hello", null);		
 	}
 
 }
