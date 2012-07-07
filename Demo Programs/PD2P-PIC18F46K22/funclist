@@ -1,0 +1,5 @@
+_delay: CODE, 65456 0 80
+_main: CODE, 65270 0 48
+___wmul: CODE, 65318 0 62
+_doMath: CODE, 65380 0 76
+Total: 266

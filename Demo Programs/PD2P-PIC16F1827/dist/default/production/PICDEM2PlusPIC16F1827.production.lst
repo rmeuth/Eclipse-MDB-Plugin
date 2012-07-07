@@ -1,0 +1,998 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V1.00 build 12136 
+                                                                                               Thu Jun 21 07:17:58 2012
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 12136
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 12136"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F1827
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0001                     indf1	equ	1
+    35  0002                     pc	equ	2
+    36  0002                     pcl	equ	2
+    37  0003                     status	equ	3
+    38  0004                     fsr0l	equ	4
+    39  0005                     fsr0h	equ	5
+    40  0006                     fsr1l	equ	6
+    41  0007                     fsr1h	equ	7
+    42  0008                     bsr	equ	8
+    43  0009                     wreg	equ	9
+    44  000B                     intcon	equ	11
+    45  0001                     c	equ	1
+    46  0000                     z	equ	0
+    47  000A                     pclath	equ	10
+    48                           	FNCALL	_main,_delay
+    49                           	FNCALL	_main,_doMath
+    50                           	FNCALL	_doMath,___wmul
+    51                           	FNROOT	_main
+    52                           	global	_PORTB
+    53  000D                     _PORTB	set	0xD
+    54                           	global	_TRISB
+    55  008D                     _TRISB	set	0x8D
+    56                           psect	text71,local,class=CODE,delta=2,merge=1
+    57                           global __ptext71
+    58  0000                     __ptext71:
+    59                           	file	"C:\Users\Donkey\AppData\Local\Temp\sqa0."
+    60                           	line	#
+    61                           psect cinit,class=CODE,delta=2
+    62                           global start_initialization
+    63  0763                     start_initialization:
+    64                           
+    65                           psect cinit,class=CODE,delta=2,merge=1
+    66                           global end_of_initialization
+    67                           
+    68                           ;End of C runtime variable initialization code
+    69                           
+    70  0763                     end_of_initialization:
+    71  0763  0020               movlb 0
+    72  0764  3187  2F66         ljmp _main	;jump to C main() function
+    73                           psect	cstackCOMMON,class=COMMON,space=1
+    74                           global __pcstackCOMMON
+    75  0070                     __pcstackCOMMON:
+    76                           	global	??_delay
+    77  0070                     ??_delay:	; 0 bytes @ 0x0
+    78                           	global	?_delay
+    79  0070                     ?_delay:	; 2 bytes @ 0x0
+    80                           	global	?_main
+    81  0070                     ?_main:	; 2 bytes @ 0x0
+    82                           	global	?___wmul
+    83  0070                     ?___wmul:	; 2 bytes @ 0x0
+    84                           	global	delay@clock
+    85  0070                     delay@clock:	; 2 bytes @ 0x0
+    86                           	global	___wmul@multiplier
+    87  0070                     ___wmul@multiplier:	; 2 bytes @ 0x0
+    88  0070                     	ds	2
+    89                           	global	delay@counter
+    90  0072                     delay@counter:	; 2 bytes @ 0x2
+    91                           	global	___wmul@multiplicand
+    92  0072                     ___wmul@multiplicand:	; 2 bytes @ 0x2
+    93  0072                     	ds	2
+    94                           	global	??___wmul
+    95  0074                     ??___wmul:	; 0 bytes @ 0x4
+    96                           	global	___wmul@product
+    97  0074                     ___wmul@product:	; 2 bytes @ 0x4
+    98  0074                     	ds	2
+    99                           	global	?_doMath
+   100  0076                     ?_doMath:	; 2 bytes @ 0x6
+   101  0076                     	ds	2
+   102                           	global	??_doMath
+   103  0078                     ??_doMath:	; 0 bytes @ 0x8
+   104                           	global	??_main
+   105  0078                     ??_main:	; 0 bytes @ 0x8
+   106                           	global	main@result
+   107  0078                     main@result:	; 2 bytes @ 0x8
+   108  0078                     	ds	2
+   109                           psect	cstackBANK0,class=BANK0,space=1
+   110                           global __pcstackBANK0
+   111  0020                     __pcstackBANK0:
+   112                           	global	doMath@a
+   113  0020                     doMath@a:	; 2 bytes @ 0x0
+   114  0020                     	ds	2
+   115                           	global	doMath@b
+   116  0022                     doMath@b:	; 2 bytes @ 0x2
+   117  0022                     	ds	2
+   118                           	global	doMath@c
+   119  0024                     doMath@c:	; 2 bytes @ 0x4
+   120  0024                     	ds	2
+   121                           	global	doMath@result
+   122  0026                     doMath@result:	; 2 bytes @ 0x6
+   123  0026                     	ds	2
+   124                           ;!
+   125                           ;!Data Sizes:
+   126                           ;!    Strings     0
+   127                           ;!    Constant    0
+   128                           ;!    Data        0
+   129                           ;!    BSS         0
+   130                           ;!    Persistent  0
+   131                           ;!    Stack       0
+   132                           ;!
+   133                           ;!Auto Spaces:
+   134                           ;!    Space          Size  Autos    Used
+   135                           ;!    COMMON           14     10      10
+   136                           ;!    BANK0            80      8       8
+   137                           ;!    BANK1            80      0       0
+   138                           ;!    BANK2            80      0       0
+   139                           ;!    BANK3            80      0       0
+   140                           ;!    BANK4            48      0       0
+   141                           
+   142                           ;!
+   143                           ;!Pointer List with Targets:
+   144                           ;!
+   145                           ;!    ?_doMath	int  size(1) Largest target is 0
+   146                           ;!
+   147                           ;!    ?___wmul	unsigned int  size(1) Largest target is 0
+   148                           ;!
+   149                           ;!    ?_delay	int  size(1) Largest target is 0
+   150                           ;!
+   151                           
+   152                           
+   153                           ;!
+   154                           ;!Critical Paths under _main in COMMON
+   155                           ;!
+   156                           ;!    _main->_doMath
+   157                           ;!    _doMath->___wmul
+   158                           ;!
+   159                           ;!Critical Paths under _main in BANK0
+   160                           ;!
+   161                           ;!    _main->_doMath
+   162                           ;!
+   163                           ;!Critical Paths under _main in BANK1
+   164                           ;!
+   165                           ;!    None.
+   166                           ;!
+   167                           ;!Critical Paths under _main in BANK2
+   168                           ;!
+   169                           ;!    None.
+   170                           ;!
+   171                           ;!Critical Paths under _main in BANK3
+   172                           ;!
+   173                           ;!    None.
+   174                           ;!
+   175                           ;!Critical Paths under _main in BANK4
+   176                           ;!
+   177                           ;!    None.
+   178                           
+   179 ;;
+   180 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   181 ;;
+   182                           
+   183                           ;!
+   184                           ;!Call Graph Tables:
+   185                           ;!
+   186                           ;! ---------------------------------------------------------------------------------
+   187                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   188                           ;! ---------------------------------------------------------------------------------
+   189                           ;! (0) _main                                                 2     2      0     222
+   190                           ;!                                              8 COMMON     2     2      0
+   191                           ;!                              _delay
+   192                           ;!                             _doMath
+   193                           ;! ---------------------------------------------------------------------------------
+   194                           ;! (1) _delay                                                4     4      0      35
+   195                           ;!                                              0 COMMON     4     4      0
+   196                           ;! ---------------------------------------------------------------------------------
+   197                           ;! (1) _doMath                                              10     8      2     185
+   198                           ;!                                              6 COMMON     2     0      2
+   199                           ;!                                              0 BANK0      8     8      0
+   200                           ;!                             ___wmul
+   201                           ;! ---------------------------------------------------------------------------------
+   202                           ;! (2) ___wmul                                               6     2      4      92
+   203                           ;!                                              0 COMMON     6     2      4
+   204                           ;! ---------------------------------------------------------------------------------
+   205                           ;! Estimated maximum stack depth 2
+   206                           ;! ---------------------------------------------------------------------------------
+   207                           ;!
+   208                           ;! Call Graph Graphs:
+   209                           ;!
+   210                           ;! _main (ROOT)
+   211                           ;!   _delay
+   212                           ;!   _doMath
+   213                           ;!     ___wmul
+   214                           ;!
+   215                           
+   216                           ;! Address spaces:
+   217                           
+   218                           ;!Name               Size   Autos  Total    Cost      Usage
+   219                           ;!BIGRAM             170      0       0       0        0.0%
+   220                           ;!EEDATA             100      0       0       0        0.0%
+   221                           ;!NULL                 0      0       0       0        0.0%
+   222                           ;!CODE                 0      0       0       0        0.0%
+   223                           ;!BITCOMMON            E      0       0       1        0.0%
+   224                           ;!BITSFR0              0      0       0       1        0.0%
+   225                           ;!SFR0                 0      0       0       1        0.0%
+   226                           ;!COMMON               E      A       A       2       71.4%
+   227                           ;!BITSFR1              0      0       0       2        0.0%
+   228                           ;!SFR1                 0      0       0       2        0.0%
+   229                           ;!BITSFR2              0      0       0       3        0.0%
+   230                           ;!SFR2                 0      0       0       3        0.0%
+   231                           ;!STACK                0      0       2       3        0.0%
+   232                           ;!BITSFR3              0      0       0       4        0.0%
+   233                           ;!SFR3                 0      0       0       4        0.0%
+   234                           ;!ABS                  0      0       0       4        0.0%
+   235                           ;!BITBANK0            50      0       0       5        0.0%
+   236                           ;!BITSFR4              0      0       0       5        0.0%
+   237                           ;!SFR4                 0      0       0       5        0.0%
+   238                           ;!BANK0               50      8       8       6       10.0%
+   239                           ;!BITSFR5              0      0       0       6        0.0%
+   240                           ;!SFR5                 0      0       0       6        0.0%
+   241                           ;!BITBANK1            50      0       0       7        0.0%
+   242                           ;!BITSFR6              0      0       0       7        0.0%
+   243                           ;!SFR6                 0      0       0       7        0.0%
+   244                           ;!BANK1               50      0       0       8        0.0%
+   245                           ;!BITSFR7              0      0       0       8        0.0%
+   246                           ;!SFR7                 0      0       0       8        0.0%
+   247                           ;!BITBANK2            50      0       0       9        0.0%
+   248                           ;!BITSFR8              0      0       0       9        0.0%
+   249                           ;!SFR8                 0      0       0       9        0.0%
+   250                           ;!BANK2               50      0       0      10        0.0%
+   251                           ;!BITSFR9              0      0       0      10        0.0%
+   252                           ;!SFR9                 0      0       0      10        0.0%
+   253                           ;!BITBANK3            50      0       0      11        0.0%
+   254                           ;!BITSFR10             0      0       0      11        0.0%
+   255                           ;!SFR10                0      0       0      11        0.0%
+   256                           ;!BANK3               50      0       0      12        0.0%
+   257                           ;!BITSFR11             0      0       0      12        0.0%
+   258                           ;!SFR11                0      0       0      12        0.0%
+   259                           ;!BITBANK4            30      0       0      13        0.0%
+   260                           ;!BITSFR12             0      0       0      13        0.0%
+   261                           ;!SFR12                0      0       0      13        0.0%
+   262                           ;!BANK4               30      0       0      14        0.0%
+   263                           ;!BITSFR13             0      0       0      14        0.0%
+   264                           ;!SFR13                0      0       0      14        0.0%
+   265                           ;!BITSFR14             0      0       0      15        0.0%
+   266                           ;!SFR14                0      0       0      15        0.0%
+   267                           ;!DATA                 0      0       0      15        0.0%
+   268                           ;!BITSFR15             0      0       0      16        0.0%
+   269                           ;!SFR15                0      0       0      16        0.0%
+   270                           ;!BITSFR16             0      0       0      17        0.0%
+   271                           ;!SFR16                0      0       0      17        0.0%
+   272                           ;!BITSFR17             0      0       0      18        0.0%
+   273                           ;!SFR17                0      0       0      18        0.0%
+   274                           ;!BITSFR18             0      0       0      19        0.0%
+   275                           ;!SFR18                0      0       0      19        0.0%
+   276                           ;!BITSFR19             0      0       0      20        0.0%
+   277                           ;!SFR19                0      0       0      20        0.0%
+   278                           ;!BITSFR20             0      0       0      21        0.0%
+   279                           ;!SFR20                0      0       0      21        0.0%
+   280                           ;!BITSFR21             0      0       0      22        0.0%
+   281                           ;!SFR21                0      0       0      22        0.0%
+   282                           ;!BITSFR22             0      0       0      23        0.0%
+   283                           ;!SFR22                0      0       0      23        0.0%
+   284                           ;!BITSFR23             0      0       0      24        0.0%
+   285                           ;!SFR23                0      0       0      24        0.0%
+   286                           ;!BITSFR24             0      0       0      25        0.0%
+   287                           ;!SFR24                0      0       0      25        0.0%
+   288                           ;!BITSFR25             0      0       0      26        0.0%
+   289                           ;!SFR25                0      0       0      26        0.0%
+   290                           ;!BITSFR26             0      0       0      27        0.0%
+   291                           ;!SFR26                0      0       0      27        0.0%
+   292                           ;!BITSFR27             0      0       0      28        0.0%
+   293                           ;!SFR27                0      0       0      28        0.0%
+   294                           ;!BITSFR28             0      0       0      29        0.0%
+   295                           ;!SFR28                0      0       0      29        0.0%
+   296                           ;!BITSFR29             0      0       0      30        0.0%
+   297                           ;!SFR29                0      0       0      30        0.0%
+   298                           ;!BITSFR30             0      0       0      31        0.0%
+   299                           ;!SFR30                0      0       0      31        0.0%
+   300                           ;!BITSFR31             0      0       0      32        0.0%
+   301                           ;!SFR31                0      0       0      32        0.0%
+   302                           
+   303                           	global	_main
+   304                           
+   305 ;; *************** function _main *****************
+   306 ;; Defined at:
+   307 ;;		line 35 in file "main.c"
+   308 ;; Parameters:    Size  Location     Type
+   309 ;;		None
+   310 ;; Auto vars:     Size  Location     Type
+   311 ;;  result          2    8[COMMON] int 
+   312 ;; Return value:  Size  Location     Type
+   313 ;;                  2   14[COMMON] int 
+   314 ;; Registers used:
+   315 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   316 ;; Tracked objects:
+   317 ;;		On entry : 17F/0
+   318 ;;		On exit  : 0/0
+   319 ;;		Unchanged: 0/0
+   320 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+   321 ;;      Params:         0       0       0       0       0       0
+   322 ;;      Locals:         2       0       0       0       0       0
+   323 ;;      Temps:          0       0       0       0       0       0
+   324 ;;      Totals:         2       0       0       0       0       0
+   325 ;;Total ram usage:        2 bytes
+   326 ;; Hardware stack levels required when called:    2
+   327 ;; This function calls:
+   328 ;;		_delay
+   329 ;;		_doMath
+   330 ;; This function is called by:
+   331 ;;		Startup code after reset
+   332 ;; This function uses a non-reentrant model
+   333 ;;
+   334                           psect	maintext,global,class=CODE,delta=2,merge=1,split=1
+   335                           global __pmaintext
+   336  0766                     __pmaintext:
+   337                           psect	maintext
+   338                           	file	"main.c"
+   339                           	line	35
+   340                           	global	__size_of_main
+   341  001D                     	__size_of_main	equ	__end_of_main-_main
+   342                           	
+   343  0766                     _main:	
+   344                           	opt	stack 14
+   345                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   346                           	line	36
+   347                           	
+   348  0766                     l559:	
+   349                           ;main.c: 36: int result = 0;
+   350  0766  01F8               	clrf	(main@result)
+   351  0767  01F9               	clrf	(main@result+1)
+   352                           	line	37
+   353                           ;main.c: 37: TRISB = 0;
+   354  0768  0021               	movlb 1	; select bank1
+   355  0769  018D               	clrf	(141)^080h	;volatile
+   356  076A  2F6B               	goto	l561
+   357                           	line	38
+   358                           ;main.c: 38: while (1)
+   359                           	
+   360  076B                     l15:	
+   361                           	line	40
+   362                           	
+   363  076B                     l561:	
+   364                           ;main.c: 39: {
+   365                           ;main.c: 40: PORTB = 0x0F;
+   366  076B  300F               	movlw	(0Fh)
+   367  076C  0020               	movlb 0	; select bank0
+   368  076D  008D               	movwf	(13)	;volatile
+   369                           	line	41
+   370                           	
+   371  076E                     l563:	
+   372                           ;main.c: 41: delay();
+   373  076E  3187  27A7  3187   	fcall	_delay
+   374                           	line	42
+   375                           	
+   376  0771                     l565:	
+   377                           ;main.c: 42: PORTB = 0x00;
+   378  0771  0020               	movlb 0	; select bank0
+   379  0772  018D               	clrf	(13)	;volatile
+   380                           	line	43
+   381                           	
+   382  0773                     l567:	
+   383                           ;main.c: 43: delay();
+   384  0773  3187  27A7  3187   	fcall	_delay
+   385                           	line	44
+   386                           	
+   387  0776                     l569:	
+   388                           ;main.c: 44: result = doMath();
+   389  0776  3187  27D3  3187   	fcall	_doMath
+   390  0779  0877               	movf	(1+(?_doMath)),w
+   391  077A  01F9               	clrf	(main@result+1)
+   392  077B  07F9               	addwf	(main@result+1)
+   393  077C  0876               	movf	(0+(?_doMath)),w
+   394  077D  01F8               	clrf	(main@result)
+   395  077E  07F8               	addwf	(main@result)
+   396                           
+   397  077F  2F6B               	goto	l561
+   398                           	line	45
+   399                           	
+   400  0780                     l16:	
+   401                           	line	38
+   402  0780  2F6B               	goto	l561
+   403                           	
+   404  0781                     l17:	
+   405                           	line	47
+   406                           ;main.c: 45: }
+   407                           ;main.c: 46: return 0;
+   408                           ;	Return value of _main is never used
+   409                           	
+   410  0781                     l18:	
+   411                           	global	start
+   412  0781  3180  2802         	ljmp	start
+   413                           	opt stack 0
+   414                           GLOBAL	__end_of_main
+   415  0783                     	__end_of_main:
+   416                           	signat	_main,90
+   417                           	global	_delay
+   418                           
+   419 ;; *************** function _delay *****************
+   420 ;; Defined at:
+   421 ;;		line 16 in file "main.c"
+   422 ;; Parameters:    Size  Location     Type
+   423 ;;		None
+   424 ;; Auto vars:     Size  Location     Type
+   425 ;;  counter         2    2[COMMON] int 
+   426 ;;  clock           2    0[COMMON] int 
+   427 ;; Return value:  Size  Location     Type
+   428 ;;                  2    6[COMMON] int 
+   429 ;; Registers used:
+   430 ;;		wreg, status,2, btemp+1
+   431 ;; Tracked objects:
+   432 ;;		On entry : 0/0
+   433 ;;		On exit  : 0/0
+   434 ;;		Unchanged: 0/0
+   435 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+   436 ;;      Params:         0       0       0       0       0       0
+   437 ;;      Locals:         4       0       0       0       0       0
+   438 ;;      Temps:          0       0       0       0       0       0
+   439 ;;      Totals:         4       0       0       0       0       0
+   440 ;;Total ram usage:        4 bytes
+   441 ;; Hardware stack levels used:    1
+   442 ;; This function calls:
+   443 ;;		Nothing
+   444 ;; This function is called by:
+   445 ;;		_main
+   446 ;; This function uses a non-reentrant model
+   447 ;;
+   448                           psect	text72,local,class=CODE,delta=2,merge=1
+   449                           global __ptext72
+   450  07A7                     __ptext72:
+   451                           psect	text72
+   452                           	file	"main.c"
+   453                           	line	16
+   454                           	global	__size_of_delay
+   455  002C                     	__size_of_delay	equ	__end_of_delay-_delay
+   456                           	
+   457  07A7                     _delay:	
+   458                           	opt	stack 15
+   459                           ; Regs used in _delay: [wreg+status,2+btemp+1]
+   460                           	line	17
+   461                           	
+   462  07A7                     l491:	
+   463                           ;main.c: 17: int counter = 0;
+   464  07A7  01F2               	clrf	(delay@counter)
+   465  07A8  01F3               	clrf	(delay@counter+1)
+   466                           	line	18
+   467                           ;main.c: 18: int clock = 0;
+   468  07A9  01F0               	clrf	(delay@clock)
+   469  07AA  01F1               	clrf	(delay@clock+1)
+   470                           	line	19
+   471                           ;main.c: 19: for (counter = 0; counter < 10000; counter++) {
+   472  07AB  01F2               	clrf	(delay@counter)
+   473  07AC  01F3               	clrf	(delay@counter+1)
+   474                           	
+   475  07AD                     l493:	
+   476  07AD  0873               	movf	(delay@counter+1),w
+   477  07AE  3A80               	xorlw	80h
+   478  07AF  00FF               	movwf	btemp+1
+   479  07B0  30A7               	movlw	(high(02710h))^80h
+   480  07B1  027F               	subwf	btemp+1,w
+   481  07B2  1D03               	skipz
+   482  07B3  2FB6               	goto	u15
+   483  07B4  3010               	movlw	low(02710h)
+   484  07B5  0272               	subwf	(delay@counter),w
+   485  07B6                     u15:
+   486                           
+   487  07B6  1C03               	skipc
+   488  07B7  2FB9               	goto	u11
+   489  07B8  2FBA               	goto	u10
+   490  07B9                     u11:
+   491  07B9  2FBC               	goto	l497
+   492  07BA                     u10:
+   493  07BA  2FD2               	goto	l9
+   494                           	
+   495  07BB                     l495:	
+   496  07BB  2FD2               	goto	l9
+   497                           	
+   498  07BC                     l7:	
+   499                           	line	20
+   500                           	
+   501  07BC                     l497:	
+   502                           ;main.c: 20: clock++;
+   503  07BC  3001               	movlw	low(01h)
+   504  07BD  07F0               	addwf	(delay@clock),f
+   505  07BE  3000               	movlw	high(01h)
+   506  07BF  3DF1               	addwfc	(delay@clock+1),f
+   507                           	line	19
+   508  07C0  3001               	movlw	low(01h)
+   509  07C1  07F2               	addwf	(delay@counter),f
+   510  07C2  3000               	movlw	high(01h)
+   511  07C3  3DF3               	addwfc	(delay@counter+1),f
+   512                           	
+   513  07C4                     l499:	
+   514  07C4  0873               	movf	(delay@counter+1),w
+   515  07C5  3A80               	xorlw	80h
+   516  07C6  00FF               	movwf	btemp+1
+   517  07C7  30A7               	movlw	(high(02710h))^80h
+   518  07C8  027F               	subwf	btemp+1,w
+   519  07C9  1D03               	skipz
+   520  07CA  2FCD               	goto	u25
+   521  07CB  3010               	movlw	low(02710h)
+   522  07CC  0272               	subwf	(delay@counter),w
+   523  07CD                     u25:
+   524                           
+   525  07CD  1C03               	skipc
+   526  07CE  2FD0               	goto	u21
+   527  07CF  2FD1               	goto	u20
+   528  07D0                     u21:
+   529  07D0  2FBC               	goto	l497
+   530  07D1                     u20:
+   531  07D1  2FD2               	goto	l9
+   532                           	
+   533  07D2                     l8:	
+   534                           	line	23
+   535                           ;main.c: 21: }
+   536                           ;main.c: 22: return clock;
+   537                           ;	Return value of _delay is never used
+   538                           	
+   539  07D2                     l9:	
+   540  07D2  0008               	return
+   541                           	opt stack 0
+   542                           GLOBAL	__end_of_delay
+   543  07D3                     	__end_of_delay:
+   544                           	signat	_delay,90
+   545                           	global	_doMath
+   546                           
+   547 ;; *************** function _doMath *****************
+   548 ;; Defined at:
+   549 ;;		line 26 in file "main.c"
+   550 ;; Parameters:    Size  Location     Type
+   551 ;;		None
+   552 ;; Auto vars:     Size  Location     Type
+   553 ;;  result          2    6[BANK0 ] int 
+   554 ;;  c               2    4[BANK0 ] int 
+   555 ;;  b               2    2[BANK0 ] int 
+   556 ;;  a               2    0[BANK0 ] int 
+   557 ;; Return value:  Size  Location     Type
+   558 ;;                  2    6[COMMON] int 
+   559 ;; Registers used:
+   560 ;;		wreg, status,2, status,0, pclath, cstack
+   561 ;; Tracked objects:
+   562 ;;		On entry : 0/0
+   563 ;;		On exit  : 0/0
+   564 ;;		Unchanged: 0/0
+   565 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+   566 ;;      Params:         2       0       0       0       0       0
+   567 ;;      Locals:         0       8       0       0       0       0
+   568 ;;      Temps:          0       0       0       0       0       0
+   569 ;;      Totals:         2       8       0       0       0       0
+   570 ;;Total ram usage:       10 bytes
+   571 ;; Hardware stack levels used:    1
+   572 ;; Hardware stack levels required when called:    1
+   573 ;; This function calls:
+   574 ;;		___wmul
+   575 ;; This function is called by:
+   576 ;;		_main
+   577 ;; This function uses a non-reentrant model
+   578 ;;
+   579                           psect	text73,local,class=CODE,delta=2,merge=1
+   580                           global __ptext73
+   581  07D3                     __ptext73:
+   582                           psect	text73
+   583                           	file	"main.c"
+   584                           	line	26
+   585                           	global	__size_of_doMath
+   586  002D                     	__size_of_doMath	equ	__end_of_doMath-_doMath
+   587                           	
+   588  07D3                     _doMath:	
+   589                           	opt	stack 14
+   590                           ; Regs used in _doMath: [wreg+status,2+status,0+pclath+cstack]
+   591                           	line	27
+   592                           	
+   593  07D3                     l549:	
+   594                           ;main.c: 27: int a = 1;
+   595  07D3  3001               	movlw	low(01h)
+   596  07D4  0020               	movlb 0	; select bank0
+   597  07D5  00A0               	movwf	(doMath@a)
+   598  07D6  3000               	movlw	high(01h)
+   599  07D7  00A1               	movwf	((doMath@a))+1
+   600                           	line	28
+   601                           ;main.c: 28: int b = 2;
+   602  07D8  3002               	movlw	low(02h)
+   603  07D9  00A2               	movwf	(doMath@b)
+   604  07DA  3000               	movlw	high(02h)
+   605  07DB  00A3               	movwf	((doMath@b))+1
+   606                           	line	29
+   607                           ;main.c: 29: int c = 3;
+   608  07DC  3003               	movlw	low(03h)
+   609  07DD  00A4               	movwf	(doMath@c)
+   610  07DE  3000               	movlw	high(03h)
+   611  07DF  00A5               	movwf	((doMath@c))+1
+   612                           	line	30
+   613                           	
+   614  07E0                     l551:	
+   615                           ;main.c: 30: int result = 0;
+   616  07E0  01A6               	clrf	(doMath@result)
+   617  07E1  01A7               	clrf	(doMath@result+1)
+   618                           	line	31
+   619                           	
+   620  07E2                     l553:	
+   621                           ;main.c: 31: result = a + b * c;
+   622  07E2  0823               	movf	(doMath@b+1),w
+   623  07E3  01F1               	clrf	(?___wmul+1)
+   624  07E4  07F1               	addwf	(?___wmul+1)
+   625  07E5  0822               	movf	(doMath@b),w
+   626  07E6  01F0               	clrf	(?___wmul)
+   627  07E7  07F0               	addwf	(?___wmul)
+   628                           
+   629  07E8  0825               	movf	(doMath@c+1),w
+   630  07E9  01F3               	clrf	1+(?___wmul)+02h
+   631  07EA  07F3               	addwf	1+(?___wmul)+02h
+   632  07EB  0824               	movf	(doMath@c),w
+   633  07EC  01F2               	clrf	0+(?___wmul)+02h
+   634  07ED  07F2               	addwf	0+(?___wmul)+02h
+   635                           
+   636  07EE  3187  2783  3187   	fcall	___wmul
+   637  07F1  0020               	movlb 0	; select bank0
+   638  07F2  0820               	movf	(doMath@a),w
+   639  07F3  0770               	addwf	(0+(?___wmul)),w
+   640  07F4  00A6               	movwf	(doMath@result)
+   641  07F5  0821               	movf	(doMath@a+1),w
+   642  07F6  3D71               	addwfc	(1+(?___wmul)),w
+   643  07F7  00A7               	movwf	1+(doMath@result)
+   644                           	line	32
+   645                           	
+   646  07F8                     l555:	
+   647                           ;main.c: 32: return result;
+   648  07F8  0827               	movf	(doMath@result+1),w
+   649  07F9  01F7               	clrf	(?_doMath+1)
+   650  07FA  07F7               	addwf	(?_doMath+1)
+   651  07FB  0826               	movf	(doMath@result),w
+   652  07FC  01F6               	clrf	(?_doMath)
+   653  07FD  07F6               	addwf	(?_doMath)
+   654                           
+   655  07FE  2FFF               	goto	l12
+   656                           	
+   657  07FF                     l557:	
+   658                           	line	33
+   659                           	
+   660  07FF                     l12:	
+   661  07FF  0008               	return
+   662                           	opt stack 0
+   663                           GLOBAL	__end_of_doMath
+   664  0800                     	__end_of_doMath:
+   665                           	signat	_doMath,90
+   666                           	global	___wmul
+   667                           
+   668 ;; *************** function ___wmul *****************
+   669 ;; Defined at:
+   670 ;;		line 3 in file "C:\Program Files (x86)\Microchip\xc8\v1.00\sources\wmul.c"
+   671 ;; Parameters:    Size  Location     Type
+   672 ;;  multiplier      2    0[COMMON] unsigned int 
+   673 ;;  multiplicand    2    2[COMMON] unsigned int 
+   674 ;; Auto vars:     Size  Location     Type
+   675 ;;  product         2    4[COMMON] unsigned int 
+   676 ;; Return value:  Size  Location     Type
+   677 ;;                  2    0[COMMON] unsigned int 
+   678 ;; Registers used:
+   679 ;;		wreg, status,2, status,0
+   680 ;; Tracked objects:
+   681 ;;		On entry : 0/0
+   682 ;;		On exit  : 0/0
+   683 ;;		Unchanged: 0/0
+   684 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+   685 ;;      Params:         4       0       0       0       0       0
+   686 ;;      Locals:         2       0       0       0       0       0
+   687 ;;      Temps:          0       0       0       0       0       0
+   688 ;;      Totals:         6       0       0       0       0       0
+   689 ;;Total ram usage:        6 bytes
+   690 ;; Hardware stack levels used:    1
+   691 ;; This function calls:
+   692 ;;		Nothing
+   693 ;; This function is called by:
+   694 ;;		_doMath
+   695 ;; This function uses a non-reentrant model
+   696 ;;
+   697                           psect	text74,local,class=CODE,delta=2,merge=1
+   698                           global __ptext74
+   699  0783                     __ptext74:
+   700                           psect	text74
+   701                           	file	"C:\Program Files (x86)\Microchip\xc8\v1.00\sources\wmul.c"
+   702                           	line	3
+   703                           	global	__size_of___wmul
+   704  0024                     	__size_of___wmul	equ	__end_of___wmul-___wmul
+   705                           	
+   706  0783                     ___wmul:	
+   707                           	opt	stack 14
+   708                           ; Regs used in ___wmul: [wreg+status,2+status,0]
+   709                           	line	4
+   710                           	
+   711  0783                     l537:	
+   712  0783  01F4               	clrf	(___wmul@product)
+   713  0784  01F5               	clrf	(___wmul@product+1)
+   714  0785  2F86               	goto	l539
+   715                           	line	6
+   716                           	
+   717  0786                     l107:	
+   718                           	line	7
+   719                           	
+   720  0786                     l539:	
+   721  0786  1C70               	btfss	(___wmul@multiplier),(0)&7
+   722  0787  2F89               	goto	u71
+   723  0788  2F8A               	goto	u70
+   724  0789                     u71:
+   725  0789  2F8E               	goto	l108
+   726  078A                     u70:
+   727                           	line	8
+   728                           	
+   729  078A                     l541:	
+   730  078A  0872               	movf	(___wmul@multiplicand),w
+   731  078B  07F4               	addwf	(___wmul@product),f
+   732  078C  0873               	movf	(___wmul@multiplicand+1),w
+   733  078D  3DF5               	addwfc	(___wmul@product+1),f
+   734                           	
+   735  078E                     l108:	
+   736                           	line	9
+   737  078E  3001               	movlw	01h
+   738                           	
+   739  078F                     u85:
+   740  078F  35F2               	lslf	(___wmul@multiplicand),f
+   741  0790  0DF3               	rlf	(___wmul@multiplicand+1),f
+   742  0791  0B89               	decfsz	wreg,f
+   743  0792  2F8F               	goto	u85
+   744                           	line	10
+   745                           	
+   746  0793                     l543:	
+   747  0793  3001               	movlw	01h
+   748                           	
+   749  0794                     u95:
+   750  0794  36F1               	lsrf	(___wmul@multiplier+1),f
+   751  0795  0CF0               	rrf	(___wmul@multiplier),f
+   752  0796  0B89               	decfsz	wreg,f
+   753  0797  2F94               	goto	u95
+   754                           	line	11
+   755  0798  0871               	movf	((___wmul@multiplier+1)),w
+   756  0799  0470               	iorwf	((___wmul@multiplier)),w
+   757  079A  1D03               	skipz
+   758  079B  2F9D               	goto	u101
+   759  079C  2F9E               	goto	u100
+   760  079D                     u101:
+   761  079D  2F86               	goto	l539
+   762  079E                     u100:
+   763  079E  2F9F               	goto	l545
+   764                           	
+   765  079F                     l109:	
+   766                           	line	12
+   767                           	
+   768  079F                     l545:	
+   769  079F  0875               	movf	(___wmul@product+1),w
+   770  07A0  01F1               	clrf	(?___wmul+1)
+   771  07A1  07F1               	addwf	(?___wmul+1)
+   772  07A2  0874               	movf	(___wmul@product),w
+   773  07A3  01F0               	clrf	(?___wmul)
+   774  07A4  07F0               	addwf	(?___wmul)
+   775                           
+   776  07A5  2FA6               	goto	l110
+   777                           	
+   778  07A6                     l547:	
+   779                           	line	13
+   780                           	
+   781  07A6                     l110:	
+   782  07A6  0008               	return
+   783                           	opt stack 0
+   784                           GLOBAL	__end_of___wmul
+   785  07A7                     	__end_of___wmul:
+   786                           	signat	___wmul,8314
+   787                           psect	text75,local,class=CODE,delta=2,merge=1
+   788                           global __ptext75
+   789  0000                     __ptext75:
+   790                           	global	btemp
+   791  007E                     	btemp set 07Eh
+   792                           
+   793                           	DABS	1,126,2	;btemp
+   794                           	global	wtemp0
+   795  007E                     	wtemp0 set btemp
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     10      10
+    BANK0            80      8       8
+    BANK1            80      0       0
+    BANK2            80      0       0
+    BANK3            80      0       0
+    BANK4            48      0       0
+
+Pointer List with Targets:
+
+    ?_doMath	int  size(1) Largest target is 0
+
+    ?___wmul	unsigned int  size(1) Largest target is 0
+
+    ?_delay	int  size(1) Largest target is 0
+
+
+Critical Paths under _main in COMMON
+
+    _main->_doMath
+    _doMath->___wmul
+
+Critical Paths under _main in BANK0
+
+    _main->_doMath
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0     222
+                                              8 COMMON     2     2      0
+                              _delay
+                             _doMath
+ ---------------------------------------------------------------------------------
+ (1) _delay                                                4     4      0      35
+                                              0 COMMON     4     4      0
+ ---------------------------------------------------------------------------------
+ (1) _doMath                                              10     8      2     185
+                                              6 COMMON     2     0      2
+                                              0 BANK0      8     8      0
+                             ___wmul
+ ---------------------------------------------------------------------------------
+ (2) ___wmul                                               6     2      4      92
+                                              0 COMMON     6     2      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _delay
+   _doMath
+     ___wmul
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             170      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITCOMMON            E      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               E      A       A       2       71.4%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR2              0      0       0       3        0.0%
+SFR2                 0      0       0       3        0.0%
+STACK                0      0       2       3        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+ABS                  0      0       0       4        0.0%
+BITBANK0            50      0       0       5        0.0%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BANK0               50      8       8       6       10.0%
+BITSFR5              0      0       0       6        0.0%
+SFR5                 0      0       0       6        0.0%
+BITBANK1            50      0       0       7        0.0%
+BITSFR6              0      0       0       7        0.0%
+SFR6                 0      0       0       7        0.0%
+BANK1               50      0       0       8        0.0%
+BITSFR7              0      0       0       8        0.0%
+SFR7                 0      0       0       8        0.0%
+BITBANK2            50      0       0       9        0.0%
+BITSFR8              0      0       0       9        0.0%
+SFR8                 0      0       0       9        0.0%
+BANK2               50      0       0      10        0.0%
+BITSFR9              0      0       0      10        0.0%
+SFR9                 0      0       0      10        0.0%
+BITBANK3            50      0       0      11        0.0%
+BITSFR10             0      0       0      11        0.0%
+SFR10                0      0       0      11        0.0%
+BANK3               50      0       0      12        0.0%
+BITSFR11             0      0       0      12        0.0%
+SFR11                0      0       0      12        0.0%
+BITBANK4            30      0       0      13        0.0%
+BITSFR12             0      0       0      13        0.0%
+SFR12                0      0       0      13        0.0%
+BANK4               30      0       0      14        0.0%
+BITSFR13             0      0       0      14        0.0%
+SFR13                0      0       0      14        0.0%
+BITSFR14             0      0       0      15        0.0%
+SFR14                0      0       0      15        0.0%
+DATA                 0      0       0      15        0.0%
+BITSFR15             0      0       0      16        0.0%
+SFR15                0      0       0      16        0.0%
+BITSFR16             0      0       0      17        0.0%
+SFR16                0      0       0      17        0.0%
+BITSFR17             0      0       0      18        0.0%
+SFR17                0      0       0      18        0.0%
+BITSFR18             0      0       0      19        0.0%
+SFR18                0      0       0      19        0.0%
+BITSFR19             0      0       0      20        0.0%
+SFR19                0      0       0      20        0.0%
+BITSFR20             0      0       0      21        0.0%
+SFR20                0      0       0      21        0.0%
+BITSFR21             0      0       0      22        0.0%
+SFR21                0      0       0      22        0.0%
+BITSFR22             0      0       0      23        0.0%
+SFR22                0      0       0      23        0.0%
+BITSFR23             0      0       0      24        0.0%
+SFR23                0      0       0      24        0.0%
+BITSFR24             0      0       0      25        0.0%
+SFR24                0      0       0      25        0.0%
+BITSFR25             0      0       0      26        0.0%
+SFR25                0      0       0      26        0.0%
+BITSFR26             0      0       0      27        0.0%
+SFR26                0      0       0      27        0.0%
+BITSFR27             0      0       0      28        0.0%
+SFR27                0      0       0      28        0.0%
+BITSFR28             0      0       0      29        0.0%
+SFR28                0      0       0      29        0.0%
+BITSFR29             0      0       0      30        0.0%
+SFR29                0      0       0      30        0.0%
+BITSFR30             0      0       0      31        0.0%
+SFR30                0      0       0      31        0.0%
+BITSFR31             0      0       0      32        0.0%
+SFR31                0      0       0      32        0.0%
+
+
+HI-TECH Software PICC Macro Assembler V1.00 build 12136 
+Symbol Table                                                                                   Thu Jun 21 07:17:58 2012
+
+                   l7 07BC                     l8 07D2                     l9 07D2                    l12 07FF  
+                  l15 076B                    l16 0780                    l17 0781                    l18 0781  
+                  u10 07BA                    u11 07B9                    u20 07D1                    u21 07D0  
+                  u15 07B6                    u25 07CD                    u70 078A                    u71 0789  
+                  u85 078F                    u95 0794   ___wmul@multiplicand 0072                   l110 07A6  
+                 l107 0786                   l108 078E                   l109 079F                   l541 078A  
+                 l543 0793                   l551 07E0                   l545 079F                   l537 0783  
+                 l553 07E2                   l561 076B                   l547 07A6                   l539 0786  
+                 l555 07F8                   l491 07A7                   l563 076E                   l557 07FF  
+                 l549 07D3                   l493 07AD                   l565 0771                   l495 07BB  
+                 l567 0773                   l559 0766                   l497 07BC                   l569 0776  
+                 l499 07C4                   u100 079E                   u101 079D                   wreg 0009  
+                _main 0766                  btemp 007E                  start 0002                 ?_main 0070  
+               _PORTB 000D                 _TRISB 008D                 _delay 07A7                 wtemp0 007E  
+        __end_of_main 0783                ??_main 0078                ?_delay 0070                ___wmul 0783  
+              _doMath 07D3        __pcstackCOMMON 0070         __end_of_delay 07D3               ??_delay 0070  
+          __pmaintext 0766               ?___wmul 0070               ?_doMath 0076       __size_of___wmul 0024  
+     __size_of_doMath 002D               doMath@a 0020               doMath@b 0022               doMath@c 0024  
+          delay@clock 0070  end_of_initialization 0763            main@result 0078        __end_of___wmul 07A7  
+      __end_of_doMath 0800          doMath@result 0026   start_initialization 0763              ??___wmul 0074  
+            ??_doMath 0078         __pcstackBANK0 0020        __size_of_delay 002C          delay@counter 0072  
+      ___wmul@product 0074     ___wmul@multiplier 0070              __ptext71 0000              __ptext72 07A7  
+            __ptext73 07D3              __ptext74 0783              __ptext75 0000         __size_of_main 001D  
