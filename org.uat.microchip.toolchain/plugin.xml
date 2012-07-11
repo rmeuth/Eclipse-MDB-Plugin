@@ -388,4 +388,25 @@
       </launchConfigurationTypeImage>
    </extension>
 
+   <extension
+         point="org.eclipse.debug.core.breakpoints">
+      <breakpoint
+            class="org.uat.microchip.debug.breakpoints.MicrochipLineBreakpoints"
+            id="microchip.lineBreakpoint"
+            markerType="microchip.markerType.lineBreakpoint"
+            name="Microchip Line Breakpoints">
+      </breakpoint>
+   </extension>
+      <extension
+         id="microchip.markerType.lineBreakpoint"
+         name="Microchip Line Breakpoint Marker"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.debug.core.lineBreakpointMarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
 </plugin>
