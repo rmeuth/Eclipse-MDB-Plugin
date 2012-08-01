@@ -75,5 +75,6 @@
 	<classpathentry kind="lib" path="lib/PICKIT3.jar"/>
 	<classpathentry kind="lib" path="lib/PM3.jar"/>
 	<classpathentry kind="lib" path="lib/REALICE.jar"/>
+	<classpathentry kind="lib" path="lib/tex.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
