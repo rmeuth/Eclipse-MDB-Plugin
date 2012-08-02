@@ -11,7 +11,7 @@
          <configuration
                cleanCommand="del /f"
                errorParsers="org.uat.microchip.compiler.errorparser"
-               id="org.uat.microchip.toolchain.picMicrocontroller.release."
+               id="org.uat.microchip.toolchain.picMicrocontroller.release"
                name="Release">
             <toolChain
                   id="org.uat.microchip.toolchain.picMicrocontroller.release.toolchain"
@@ -408,5 +408,16 @@
             value="true">
       </persistent>
    </extension>
+      <extension
+            point="org.eclipse.cdt.managedbuilder.ui.newWizardPages">
+         <wizardPage
+               ID="org.uat.microchip.toolchain.wizardPage"
+               pageClass="org.uat.microchip.toolchain.WizardPage">
+         </wizardPage>
+         <wizardPage
+               ID="org.uat.microchip.toolchain.wizardPage3"
+               pageClass="org.uat.microchip.toolchain.WizardPage3">
+         </wizardPage>
+      </extension>
 
 </plugin>
