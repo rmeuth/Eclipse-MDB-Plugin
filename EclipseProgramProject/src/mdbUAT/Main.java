@@ -44,7 +44,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
 
-        
+        System.out.println(System.getProperty("java.version"));
         
         String toolId = null;
         PlatformToolMeta meta = null;
@@ -70,14 +70,14 @@ public class Main {
             //Loading a file
             System.out.println("Loading a file now");
 //            String FileName = "C:/Microchip Project/Explorer16/Explorer16PIC24MCU_1/dist/default/production/Explorer16PIC24MCU_1.production.hex";
-            String FileName = "C:/Users/Jacob/Desktop/Explorer16PIC24MCU_1.production.hex";
+            String FileName = "C:/Users/Jacob/MPLABXProjects/Explorer16PIC24MCU_1.X/dist/default/debug/Explorer16PIC24MCU_1.X.debug.elf";
             Loader loader = assembly.getLookup().lookup(Loader.class);
             loader.Load(FileName);
             System.out.println("File Loaded");
 
             //Halt
-            System.out.println("Halting");
-            MDB.Halt();
+//            System.out.println("Halting");
+//            MDB.Halt();
 
             //Program file
             System.out.println("Programming Now");
@@ -86,8 +86,8 @@ public class Main {
             System.out.println("Programming Completed");
 
             //Reset
-            System.out.println("Reset");
-            MDB.Reset(false); //False to reset to reset vector
+//            System.out.println("Reset");
+//            MDB.Reset(false); //False to reset to reset vector
 
             //Run
             System.out.println("Running");
@@ -118,6 +118,7 @@ public class Main {
         Properties Props = new Properties();
         Props.setProperty("programoptions.eraseb4program ", "true");
         Props.setProperty("poweroptions.powerenable", "true");
+        Props.setProperty("voltagevalue",Float.toString(assembly.GetDevice().getVddDefaultVoltage()));
         assemblyFactory.SetToolProperties(assembly, Props);
     }
 
@@ -134,7 +135,8 @@ public class Main {
             System.out.println("\nAssembly Header Set to \"\"!\n");
             assembly.SetHeader("");
         }
-        assemblyFactory.ChangeTool(assembly, meta.getConfigurationObjectID(), meta.getClassName(), meta.getFlavor(), toolId);
+        System.out.println();
+        assemblyFactory.ChangeTool(assembly, meta.getName(), meta.getClassName(), meta.getFlavor(), toolId);
 
 
     }

@@ -3,20 +3,15 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-comm.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-jfreechart.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-jna.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-crownking.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-EMUFileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-ICD2FileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-ICD3FileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-MPLABDocumentLocator.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-perfilewrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-PK2FileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-PK3FileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-PM3FileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-RIFileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-SKDEFileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-StreamingDataFileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-SwingX_1_0.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-TEXFileWrapper.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-Utils.jar"/>
@@ -37,7 +32,6 @@
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-OptSupport.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-PICKit3Tool.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-platformtool.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-PM3.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-program.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-RealICETool.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-registerview.jar"/>
@@ -51,7 +45,6 @@
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-usedmemoryutil.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-hid.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util-binaryconversion.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util-circularfilebuffer.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util-pathretrieval.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util.jar"/>
 	<classpathentry kind="lib" path="lib/com-microchip-mplab-util-observers.jar"/>
@@ -62,10 +55,6 @@
 	<classpathentry kind="lib" path="lib/emu.jar"/>
 	<classpathentry kind="lib" path="lib/icd2.jar"/>
 	<classpathentry kind="lib" path="lib/ICD3.jar"/>
-	<classpathentry kind="lib" path="lib/junit-3.8.2-api.zip"/>
-	<classpathentry kind="lib" path="lib/junit-4.5-api.zip"/>
-	<classpathentry kind="lib" path="lib/junit-4.5-src.jar"/>
-	<classpathentry kind="lib" path="lib/junit-4.5.jar"/>
 	<classpathentry kind="lib" path="lib/mplabinfo.jar"/>
 	<classpathentry kind="lib" path="lib/org-netbeans-api-debugger.jar"/>
 	<classpathentry kind="lib" path="lib/org-openide-filesystems.jar"/>

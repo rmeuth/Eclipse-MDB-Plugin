@@ -73,7 +73,7 @@ public class Main {
             //Loading a file
             System.out.println("Loading a file now");
 //            String FileName = "C:/Microchip Project/Explorer16/Explorer16PIC24MCU_1/dist/default/production/Explorer16PIC24MCU_1.production.hex";
-            String FileName = "C:/Microchip Project/Explorer16/Explorer16PIC24MCU_2/dist/default/production/Explorer16PIC24MCU_2.production.hex";
+            String FileName = "C:/Users/Jacob/Desktop/Explorer16PIC24MCU_2.production.hex";
             Loader loader = assembly.getLookup().lookup(Loader.class);
             loader.Load(FileName);
             System.out.println("File Loaded");
@@ -107,6 +107,7 @@ public class Main {
         }
         catch(Exception e)
         {
+            System.out.println(e.getMessage());
             System.out.println("Oops, something went wrong...");
         }
         

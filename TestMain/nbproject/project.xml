@@ -12,7 +12,7 @@
             </test-roots>
         </data>
         <libraries xmlns="http://www.netbeans.org/ns/ant-project-libraries/1">
-            <definitions>C:\Microchip Project\mplab-x-sdk\MPLAB_X\lib\nblibraries.properties</definitions>
+            <definitions>C:\Users\Jacob\Desktop\mplab-x-sdk-1.20\mplab-x-sdk\MPLAB_X\lib\nblibraries.properties</definitions>
         </libraries>
     </configuration>
 </project>
