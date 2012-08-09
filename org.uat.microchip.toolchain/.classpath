@@ -3,68 +3,130 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-comm.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-crownking.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-EMUFileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-ICD2FileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-ICD3FileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-MPLABDocumentLocator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-perfilewrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-PK3FileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-PM3FileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-RIFileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-SwingX_1_0.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-TEXFileWrapper.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-libs-Utils.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-logger.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-assemblies.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-CodeGuardMediator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-common-debug.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-ConfigBitsChecker.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-ControlPointMediator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-debugger.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-disasm.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-FreezeMediator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-ICD3Tool.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-loader.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-memory.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-MessageMediator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-objectfileparsing.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-OptSupport.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-PICKit3Tool.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-platformtool.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-program.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-RealICETool.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-registerview.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-simulator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-skde.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-streamingdataprocessing.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-symbolview.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-TargetMemoryTransferMgr.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-ToolExecMediator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-translator.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-mdbcore-usedmemoryutil.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-hid.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util-binaryconversion.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util-pathretrieval.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-open-util.jar"/>
-	<classpathentry kind="lib" path="lib/com-microchip-mplab-util-observers.jar"/>
-	<classpathentry kind="lib" path="lib/crownking.edc.jar"/>
-	<classpathentry kind="lib" path="lib/crownking.jar"/>
-	<classpathentry kind="lib" path="lib/crownking.opt.jar"/>
-	<classpathentry kind="lib" path="lib/crownkingx.jar"/>
-	<classpathentry kind="lib" path="lib/emu.jar"/>
-	<classpathentry kind="lib" path="lib/icd2.jar"/>
-	<classpathentry kind="lib" path="lib/ICD3.jar"/>
-	<classpathentry kind="lib" path="lib/mplabinfo.jar"/>
-	<classpathentry kind="lib" path="lib/org-netbeans-api-debugger.jar"/>
-	<classpathentry kind="lib" path="lib/org-openide-filesystems.jar"/>
-	<classpathentry kind="lib" path="lib/org-openide-modules.jar"/>
-	<classpathentry kind="lib" path="lib/org-openide-util-lookup.jar"/>
-	<classpathentry kind="lib" path="lib/org-openide-util.jar"/>
-	<classpathentry kind="lib" path="lib/PICKIT3.jar"/>
-	<classpathentry kind="lib" path="lib/PM3.jar"/>
-	<classpathentry kind="lib" path="lib/REALICE.jar"/>
-	<classpathentry kind="lib" path="lib/tex.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-comm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-crownking.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-EMUFileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-ICD2FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-ICD3FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-MPLABDocumentLocator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-perfilewrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-PK3FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-PM3FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-RIFileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-SwingX_1_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-TEXFileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-libs-Utils.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-logger.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-assemblies.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-CodeGuardMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-common-debug.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-ConfigBitsChecker.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-ControlPointMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-debugger.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-disasm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-FreezeMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-ICD3Tool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-loader.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-memory.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-MessageMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-objectfileparsing.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-OptSupport.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-PICKit3Tool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-platformtool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-program.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-RealICETool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-registerview.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-simulator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-skde.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-streamingdataprocessing.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-symbolview.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-TargetMemoryTransferMgr.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-ToolExecMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-translator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-mdbcore-usedmemoryutil.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-open-hid.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-open-util-binaryconversion.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-open-util-pathretrieval.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-open-util.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com-microchip-mplab-util-observers.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/crownking.edc.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/crownking.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/crownking.opt.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/crownkingx.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/emu.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/icd2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ICD3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mplabinfo.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org-netbeans-api-debugger.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org-openide-filesystems.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org-openide-modules.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org-openide-util-lookup.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org-openide-util.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/PICKIT3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/PM3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/REALICE.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/tex.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-comm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-crownking.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-EMUFileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-ICD2FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-ICD3FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-MPLABDocumentLocator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-perfilewrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-PK3FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-PM3FileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-RIFileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-SwingX_1_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-TEXFileWrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-libs-Utils.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-logger.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-assemblies.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-CodeGuardMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-common-debug.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-ConfigBitsChecker.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-ControlPointMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-debugger.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-disasm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-FreezeMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-ICD3Tool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-loader.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-memory.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-MessageMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-objectfileparsing.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-OptSupport.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-PICKit3Tool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-platformtool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-program.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-RealICETool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-registerview.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-simulator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-skde.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-streamingdataprocessing.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-symbolview.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-TargetMemoryTransferMgr.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-ToolExecMediator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-translator.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-mdbcore-usedmemoryutil.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-open-hid.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-open-util-binaryconversion.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-open-util-pathretrieval.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-open-util.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/com-microchip-mplab-util-observers.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/crownking.edc.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/crownking.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/crownking.opt.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/crownkingx.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/emu.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/icd2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/ICD3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/mplabinfo.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/org-netbeans-api-debugger.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/org-openide-filesystems.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/org-openide-modules.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/org-openide-util-lookup.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/org-openide-util.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/PICKIT3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/PM3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ext/REALICE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

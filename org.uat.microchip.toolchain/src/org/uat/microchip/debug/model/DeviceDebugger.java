@@ -93,7 +93,7 @@ public class DeviceDebugger {
 	 * @param connectionType
 	 */
 	public Boolean Connect(CONNECTION_TYPE connectionType) {
-					
+		System.out.println("Hello world!");		
 		return true;
 	}
 	

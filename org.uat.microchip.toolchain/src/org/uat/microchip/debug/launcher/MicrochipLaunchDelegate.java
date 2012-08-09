@@ -7,7 +7,10 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.LaunchConfigurationDelegate;
 import org.eclipse.debug.core.model.RuntimeProcess;
+import org.uat.microchip.debug.model.DeviceDebugger;
 import org.uat.microchip.toolchain.Activator;
+
+import com.microchip.mplab.mdbcore.debugger.Debugger.CONNECTION_TYPE;
 
 /**
  * Launches the program
@@ -28,6 +31,8 @@ public class MicrochipLaunchDelegate extends LaunchConfigurationDelegate{
 				savedProperties.append("\n " + property.toString());
 		}
 		
+		DeviceDebugger debugger = new DeviceDebugger();
+		debugger.Connect(CONNECTION_TYPE.DEBUGGER);
 		
 		Process process = DebugPlugin.exec(new String[]{"cmd", "/C", "\"echo Imm Working!\""}, null);
 		
