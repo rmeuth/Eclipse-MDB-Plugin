@@ -15,11 +15,14 @@ public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "TestingLaunch"; //$NON-NLS-1$
-
 	// The shared instance
 	private static Activator plugin;
 	// The collection of tool properties and their values.
 	private static ArrayList<ToolProperty> toolProperties;
+	// The tool which will be used, set once and should be referenced by whole project. 
+	private static String toolType = "ICD 3";
+	// The device which will be programmed,  set once and should be referenced by whole project. 
+	private static String currentDevice = "PIC24FJ64GA004";
 	
 	/**
 	 * The constructor
@@ -86,4 +89,33 @@ public class Activator extends AbstractUIPlugin {
 	public static ArrayList<ToolProperty> getToolProperties() {
 		return toolProperties;
 	}
+	
+	/**
+	 * @return The type of tool which is to be used with this project. 
+	 */
+	public static String getToolType() {
+		return toolType;
+	}
+
+	/**
+	 * @return Set the tool type which will be used to program the device.  
+	 */
+	public static void setToolType(String toolType) {
+		Activator.toolType = toolType;
+	}
+
+	/**
+	 * @return The device which will be programmed. 
+	 */
+	public static String getCurrentDevice() {
+		return currentDevice;
+	}
+
+	/**
+	 * @param Changes the current device which will be programmed. 
+	 */
+	public static void setCurrentDevice(String currentDevice) {
+		Activator.currentDevice = currentDevice;
+	}
+
 }
