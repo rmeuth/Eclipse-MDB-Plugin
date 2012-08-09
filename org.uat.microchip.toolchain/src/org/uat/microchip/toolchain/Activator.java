@@ -44,7 +44,8 @@ public class Activator extends AbstractUIPlugin {
 	private void createToolProperties() {		
 		String[] trueFalse = new String[] { "true", "false" };
 		String[] autoNone = new String[] { "auto", "none" };
-		
+		String[] powerLevels = new String[] { "3.0", "3.125", "3.25", "3.375", "3.5" };
+				
 		toolProperties = new ArrayList<ToolProperty>();		
 		toolProperties.add(new ToolProperty("AutoSelectMemRanges", autoNone));
 		toolProperties.add(new ToolProperty("memories.programmemory", trueFalse));
@@ -55,6 +56,7 @@ public class Activator extends AbstractUIPlugin {
 		toolProperties.add(new ToolProperty("eraseb4program", trueFalse));
 		toolProperties.add(new ToolProperty("debugoptions.useswbreakpoints", trueFalse));
 		toolProperties.add(new ToolProperty("debugoptions.powerenable", trueFalse));
+		toolProperties.add(new ToolProperty("voltagevalue", powerLevels));
 		toolProperties.add(new ToolProperty("memories.programmemory.start", null));
 		toolProperties.add(new ToolProperty("memories.programmemory.end", null));		
 	}
