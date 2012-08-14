@@ -3,6 +3,8 @@ package org.uat.microchip.toolchain;
 import org.eclipse.cdt.managedbuilder.ui.wizards.MBSCustomPage;
 import org.eclipse.cdt.managedbuilder.ui.wizards.MBSCustomPageManager;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -12,8 +14,9 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.SWT;
 
 public class WizardPage extends MBSCustomPage {
-	Composite composite;
-
+	private Composite composite;
+	private Text inputText;
+	
 	public WizardPage() {
 		// TODO Auto-generated constructor stub
 		pageID = "org.uat.microchip.toolchain.wizardPage";
@@ -46,6 +49,22 @@ public class WizardPage extends MBSCustomPage {
 		pageText.setBounds(composite.getBounds());
 		pageText.setText("This page is a test page provided by the org.eclipse.cdt.managedbuilder.ui.tests plugin.");
 		pageText.setVisible(true);
+		
+		inputText = new Text(composite, SWT.CENTER);
+		inputText.setText("");
+		inputText.addKeyListener(new KeyListener(){
+			 @Override
+		      public void keyPressed(KeyEvent e) {
+		        // TODO Auto-generated method stub
+
+		      }
+
+		      @Override
+		      public void keyReleased(KeyEvent e) {
+		        // TODO 
+		    	  
+		      }
+		});
 		
 	}
 
