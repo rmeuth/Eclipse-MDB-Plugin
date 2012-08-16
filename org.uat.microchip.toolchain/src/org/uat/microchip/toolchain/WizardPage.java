@@ -3,19 +3,19 @@ package org.uat.microchip.toolchain;
 import org.eclipse.cdt.managedbuilder.ui.wizards.MBSCustomPage;
 import org.eclipse.cdt.managedbuilder.ui.wizards.MBSCustomPageManager;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.swt.events.KeyEvent;
-import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 
-public class WizardPage extends MBSCustomPage {
+public class WizardPage extends MBSCustomPage implements Runnable {
 	private Composite composite;
-	private Text inputText;
 	
 	public WizardPage() {
 		// TODO Auto-generated constructor stub
@@ -44,27 +44,44 @@ public class WizardPage extends MBSCustomPage {
 		composite = new Composite(parent, SWT.NULL);
 		composite.setLayout(new GridLayout());
 		composite.setLayoutData(new GridData(GridData.FILL_BOTH));
-
-		Text pageText = new Text(composite, SWT.CENTER);
-		pageText.setBounds(composite.getBounds());
-		pageText.setText("This page is a test page provided by the org.eclipse.cdt.managedbuilder.ui.tests plugin.");
-		pageText.setVisible(true);
 		
-		inputText = new Text(composite, SWT.CENTER);
-		inputText.setText("");
-		inputText.addKeyListener(new KeyListener(){
-			 @Override
-		      public void keyPressed(KeyEvent e) {
-		        // TODO Auto-generated method stub
-
-		      }
-
-		      @Override
-		      public void keyReleased(KeyEvent e) {
-		        // TODO 
-		    	  
-		      }
-		});
+		Group deviceGroup = new Group(composite, SWT.SHADOW_ETCHED_IN);
+		deviceGroup.setText("Device Settings");
+		
+		Label picLabel = new Label(deviceGroup, SWT.LEFT);
+		picLabel.setSize(300,30);
+		picLabel.setText("Microcontroller");
+		picLabel.setLocation(20, 20);
+		picLabel.pack();
+		
+		Combo picCombo = new Combo (deviceGroup, SWT.READ_ONLY);
+		picCombo.setItems (new String [] {"PIC1111", "PIC2222", "PIC3333"});
+		picCombo.setLocation(150, 20);
+		picCombo.pack();
+		
+		Group debuggerGroup = new Group(composite, SWT.SHADOW_ETCHED_IN);
+		debuggerGroup.setText("Debugger Settings");
+		
+		Label debugDeviceLabel = new Label(debuggerGroup, SWT.LEFT);
+		debugDeviceLabel.setSize(300,30);
+		debugDeviceLabel.setText("Debugger Tool");
+		debugDeviceLabel.setLocation(20, 20);
+		debugDeviceLabel.pack();
+		
+		Combo debugDeviceCombo = new Combo (debuggerGroup, SWT.READ_ONLY);
+		debugDeviceCombo.setItems (new String [] {"ICD3", "PICKit2", "PICKit3", "PM3", "Real ICE", "Simulator", "Other Licenced Debugger"});
+		debugDeviceCombo.setLocation(150, 20);
+		debugDeviceCombo.pack();
+		
+		Label debugPowerLabel = new Label(debuggerGroup, SWT.LEFT);
+		debugPowerLabel.setSize(300,30);
+		debugPowerLabel.setText("Power device?");
+		debugPowerLabel.setLocation(20, 50);
+		debugPowerLabel.pack();
+		
+		Button debugPowerButton = new Button(debuggerGroup, SWT.CHECK);
+		debugPowerButton.setLocation(150, 50);
+		debugPowerButton.pack();
 		
 	}
 
@@ -83,7 +100,7 @@ public class WizardPage extends MBSCustomPage {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return new String("This page is for testing, please ignore it.");
+		return new String("Set your device settings.");
 	}
 
 	@Override
@@ -107,7 +124,7 @@ public class WizardPage extends MBSCustomPage {
 	@Override
 	public String getTitle() {
 		// TODO Auto-generated method stub
-		return null;
+		return new String("Microchip Device Settings");
 	}
 
 	@Override
@@ -145,5 +162,12 @@ public class WizardPage extends MBSCustomPage {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		// TODO Code to store information from this wizard page to the build properties.
+	}
+	
 
 }

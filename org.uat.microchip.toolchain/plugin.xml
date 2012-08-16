@@ -412,11 +412,11 @@
             point="org.eclipse.cdt.managedbuilder.ui.newWizardPages">
          <wizardPage
                ID="org.uat.microchip.toolchain.wizardPage"
+               operationClass="org.uat.microchip.toolchain.WizardPage"
                pageClass="org.uat.microchip.toolchain.WizardPage">
-         </wizardPage>
-         <wizardPage
-               ID="org.uat.microchip.toolchain.wizardPage3"
-               pageClass="org.uat.microchip.toolchain.WizardPage3">
+            <projectType
+                  projectTypeID="org.uat.microchip.toolchain.picMicrocontroller">
+            </projectType>
          </wizardPage>
       </extension>
 
